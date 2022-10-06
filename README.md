@@ -8,29 +8,29 @@
 
 ### docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.1.3
  
-=> 세번째 명령어를 실행하고 나면  다음과 같은 오류가 발생.
-ERROR: bootstrap checks failed
-max virtual memory areas vm.max_map_count [65530]  is too low, increase to at least [262144]
+ => 세번째 명령어를 실행하고 나면  다음과 같은 오류가 발생.
+ ERROR: bootstrap checks failed
+ max virtual memory areas vm.max_map_count [65530]  is too low, increase to at least [262144]
  
-=> 윈도우 상에서 해당 옵션을 변경하기 위해서 cmd나 powershell에서 다음과 같은 명령어를 수행.
+ => 윈도우 상에서 해당 옵션을 변경하기 위해서 cmd나 powershell에서 다음과 같은 명령어를 수행.
 
-wsl -d docker-desktop  # docker의 시스템 콘솔화면으로 진입이된다.
-sysctl -w vm.max_map_count=262144   # 이 명령으로 max_map_count값을 변경할 수 있다.
-이후, exit 로 빠져 나온다.
+ wsl -d docker-desktop  # docker의 시스템 콘솔화면으로 진입이된다.
+ sysctl -w vm.max_map_count=262144   # 이 명령으로 max_map_count값을 변경할 수 있다.
+ 이후, exit 로 빠져 나온다.
 
-=> 영구적인 셋팅을 위해서는  /etc/sysctl.conf 파일의 내용을 변경한다.
+ => 영구적인 셋팅을 위해서는  /etc/sysctl.conf 파일의 내용을 변경한다.
 
-wsl -d docker-desktop  # docker의 시스템 콘솔화면으로 진입이된다.
+ wsl -d docker-desktop  # docker의 시스템 콘솔화면으로 진입이된다.
 
-=> vi 편집기를 사용하여 /etc/sysctl.conf 파일을 열고 아래 문장을 추가한다.
-vi /etc/sysctl.conf
+ => vi 편집기를 사용하여 /etc/sysctl.conf 파일을 열고 아래 문장을 추가한다.
+ vi /etc/sysctl.conf
 
-vm.max_map_count=262144
-=> 이 환경변수를 사용하는 이유는 (https://www.gimsesu.me/elasticsearch-change-vm-max-map-count/) 참조
+ vm.max_map_count=262144
+ => 이 환경변수를 사용하는 이유는 (https://www.gimsesu.me/elasticsearch-change-vm-max-map-count/) 참조
 
-이후, es-node01을 삭제후 다시 생성해도 되고, docker start es-node01 명령으로 컨테이너를 시작해도 된다.
+ 이후, es-node01을 삭제후 다시 생성해도 되고, docker start es-node01 명령으로 컨테이너를 시작해도 된다.
 
-최초 실행될때만 출력되는 패스워드와 enrollment token 은 별도로 잘 저장해 두어야 한다.
+ 최초 실행될때만 출력되는 패스워드와 enrollment token 은 별도로 잘 저장해 두어야 한다.
 
  
 # =============== 소스를 통한 테스트는 하기 내용 안해도 됨 ===============================
