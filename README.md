@@ -37,8 +37,8 @@ docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.el
  
  최초 실행될때만 출력되는 패스워드와 enrollment token 은 별도로 잘 저장해 두어야 한다.
  
-## Docker(kibana) 
-## =========== 소스를 통한 테스트는 하기 내용 안해도 됨 =====================
+## Docker(kibana)참고용
+
 ```
 그 다음, 별도의 터미널을 열어 kibana를 설치한다.
 
