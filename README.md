@@ -2,7 +2,7 @@
 ```
 샘플은 아래 docker를 통한 설치로 환경을 만든다
 ```
-## Docker
+## Docker(elasticsearch)
 
 ```
 docker network create elastic
@@ -37,7 +37,8 @@ docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.el
  최초 실행될때만 출력되는 패스워드와 enrollment token 은 별도로 잘 저장해 두어야 한다.
 
  
-### =========== 소스를 통한 테스트는 하기 내용 안해도 됨 =====================
+## Docker(kibana) 
+## =========== 소스를 통한 테스트는 하기 내용 안해도 됨 =====================
 ```
 그 다음, 별도의 터미널을 열어 kibana를 설치한다.
 
@@ -68,7 +69,7 @@ kibana를 위한 enrollment token을 재생성해야 하는 경우는 다음과 
 
 docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
  
-
+## Docker(삭제) 
 elasticsearch, kibana 컨테이너 삭제와 네트워크 삭제는 다음과 같이 진행한다.
 
 docker network rm elastic
