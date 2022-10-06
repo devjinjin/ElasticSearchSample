@@ -12,7 +12,7 @@ builder.Services.AddTransient<WeatherForecastService>();
 
 builder.Services.AddControllers();
 builder.Services.ConfigureSwagger();
-
+builder.Services.AddHttpClient();
 
 builder.Services.AddElasticsearch(builder.Configuration);
 
