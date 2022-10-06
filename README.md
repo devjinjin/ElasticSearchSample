@@ -11,6 +11,7 @@ docker pull docker.elastic.co/elasticsearch/elasticsearch:8.1.3
 
 docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.1.3
 ```
+
 ------------
  => 세번째 명령어를 실행하고 나면  다음과 같은 오류가 발생.
  ERROR: bootstrap checks failed
@@ -33,9 +34,8 @@ docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.el
  => 이 환경변수를 사용하는 이유는 (https://www.gimsesu.me/elasticsearch-change-vm-max-map-count/) 참조
 
  이후, es-node01을 삭제후 다시 생성해도 되고, docker start es-node01 명령으로 컨테이너를 시작해도 된다.
-
+ 
  최초 실행될때만 출력되는 패스워드와 enrollment token 은 별도로 잘 저장해 두어야 한다.
-------------
  
 ## Docker(kibana) 
 ## =========== 소스를 통한 테스트는 하기 내용 안해도 됨 =====================
