@@ -68,12 +68,13 @@ docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-reset-passw
 kibana를 위한 enrollment token을 재생성해야 하는 경우는 다음과 같은 명령을 사용한다.
 
 docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
- 
+ ```
 ## Docker(삭제) 
+```
 elasticsearch, kibana 컨테이너 삭제와 네트워크 삭제는 다음과 같이 진행한다.
 
 docker network rm elastic
 docker rm es-node01
 docker rm kib-01
-
 ```
+
