@@ -36,7 +36,7 @@ docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.el
 
  
 ### =========== 소스를 통한 테스트는 하기 내용 안해도 됨 =====================
-
+```
 그 다음, 별도의 터미널을 열어 kibana를 설치한다.
 
 docker pull docker.elastic.co/kibana/kibana:8.1.3
@@ -72,3 +72,5 @@ elasticsearch, kibana 컨테이너 삭제와 네트워크 삭제는 다음과 �
 docker network rm elastic
 docker rm es-node01
 docker rm kib-01
+
+```
