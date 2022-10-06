@@ -1,4 +1,4 @@
-# ElasticSearchSample
+# 닷넷코어 API 엘라스틱서치 테스트 샘플
 
 ## Docker
 
