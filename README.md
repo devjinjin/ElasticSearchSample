@@ -1,4 +1,4 @@
-# .net core/blazor 엘라스틱서치 테스트 샘플
+# .net core/blazor 엘라스틱서치 테스트 코드
 ```
 샘플은 아래 docker를 통한 설치로 환경을 만든다
 ```
