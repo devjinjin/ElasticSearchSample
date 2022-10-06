@@ -2,12 +2,14 @@
 
 ## Docker
 
-### docker network create elastic
+```
+docker network create elastic
 
-### docker pull docker.elastic.co/elasticsearch/elasticsearch:8.1.3
+docker pull docker.elastic.co/elasticsearch/elasticsearch:8.1.3
 
-### docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.1.3
- 
+docker run --name es-node01 --net elastic -p 9200:9200 -p 9300:9300 -t docker.elastic.co/elasticsearch/elasticsearch:8.1.3
+```
+
  => 세번째 명령어를 실행하고 나면  다음과 같은 오류가 발생.
  ERROR: bootstrap checks failed
  max virtual memory areas vm.max_map_count [65530]  is too low, increase to at least [262144]
