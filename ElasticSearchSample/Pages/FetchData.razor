@@ -1,0 +1,55 @@
+﻿@page "/fetchdata"
+
+@using ElasticSearchSample.Data
+@using ElasticSearchSample.Models
+@using System.Net.Http
+
+<PageTitle>Books</PageTitle>
+
+
+<h1>Books</h1>
+
+<p>검색어 입력</p>
+
+<div>
+    <div class="form-group row">
+        <label for="keyword" class="col-md-2 col-form-label">keyword:</label>
+        <div class="col-md-10">
+            <input id="keyword"
+                    @bind="keyword" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button type="button" @onclick=ExecuteSearch class="btn btn-success">Login</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h4>검색된 갯수 : @TotalCount</h4>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Categories</th>
+            <th>ShortDescription</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (books != null){
+            @foreach (var book in books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Categories</td>
+                    <td>@book.ShortDescription</td>
+                </tr>                  
+            }
+        }
+    </tbody>
+</table>
+
+
+
